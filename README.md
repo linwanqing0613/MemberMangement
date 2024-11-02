@@ -18,6 +18,20 @@
 - **測試**：
   - Spring Test
 
+## 數據庫設計
+### 會員表
+
+以下是會員表的 SQL 建表語句：
+
+```sql
+CREATE TABLE members (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    balance DECIMAL(10, 2),
+    birth_date DATE,
+    age INT
+);
+```
 ## API 文檔
 
 ### 1. 新增會員
@@ -36,7 +50,7 @@
 
 ### 2. 查詢所有會員
 - **HTTP 方法**: `GET`
-- **URL**: /members
+- **URL**: `/members`
 
 
 ### 3. 根據 ID 獲取會員
@@ -49,10 +63,10 @@
 - **RequestBody**:
     ```json
     {
-    "name": "Alice Smith",
-    "balance": 1200.00,
-    "birth_date": "1990-01-01",
-    "age": 34
+        "name": "Alice Smith",
+        "balance": 1200.00,
+        "birth_date": "1990-01-01",
+        "age": 34
     }
 
 ### 5. 刪除會員
@@ -62,10 +76,10 @@
 ### 6. 根據條件查詢會員
 - **HTTP 方法**: `GET`
 - **URL**: `/members/search`
-name (可選): 會員姓名
-minBalance (可選): 最低餘額
-maxBalance (可選): 最高餘額
-birth_date (可選): 出生日期
-age (可選): 年齡
-page (可選): 分頁數
-size (可選): 每頁大小
+    - name (可選): 會員姓名
+    - minBalance (可選): 最低餘額
+    - maxBalance (可選): 最高餘額
+    - birth_date (可選): 出生日期
+    - age (可選): 年齡
+    - page (可選): 分頁數
+    - size (可選): 每頁大小
