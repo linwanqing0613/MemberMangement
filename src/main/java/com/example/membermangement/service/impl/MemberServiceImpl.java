@@ -40,7 +40,7 @@ public class MemberServiceImpl implements MemberService {
             existingMember.setBalance(memberDetails.getBalance());
             existingMember.setBirthDate(memberDetails.getBirthDate());
             existingMember.setAge(memberDetails.getAge());
-            // 其他屬性更新...
+
             return memberRepository.save(existingMember);
         }
         return null;
